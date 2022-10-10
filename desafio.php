@@ -1,8 +1,8 @@
 <?php 
     echo"1.Faça uma página que exiba:<br> hora e a frase “Bom dia”, “Boa tarde” 
-    ou “Boa noite”, <br>de acordo com a hora. <br>Use a condicional if e a função date().";
+            ou “Boa noite”, de acordo com a hora. 
+                <br>Use a condicional if e a função date().";
     echo "<br>".date('h : i : s');
-    echo "<br>".date('h,-03:00');
         if(date('e')){
             echo "<br>bom dia";
         }else{
