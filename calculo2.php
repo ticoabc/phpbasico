@@ -66,9 +66,7 @@
                 //var_dump($resultado);
                 echo '<h3>Sistema em kWp: '. $resultado .'</h3>';
             }
-        ?>
-        <!--<input type="text" placeholder="Sistema em kWp <?php echo $resultado ?>">-->
-        
+        ?>       
     </div>
 </body>
 </html>

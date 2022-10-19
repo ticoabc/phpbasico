@@ -1,51 +1,76 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Exemplo</title>
-<link rel="stylesheet" href="style.css">
-<main >
-    <div class="container">
-        
-        <div class="coluna-destaque-verde">
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turi Sistemas</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
             
-            <div class="linha">
-                <!--<div class="linha">-->
-                    <form class="coluna" name="calc" method="post" enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>">
-                        <label for="Peso"> Peso
-                            <input type="text" id="Peso" name="peso" required=""></label>
-                        <label for="Altura"> Altura
-                            <input type="text" id="Altura" name="altura" required=""></label>
-                            <input type="submit" class="button-green" value="Calcular">
-                    </form>
-                </div>
+        }
+        div{
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 80px;
+            border-radius: 15px;
+            color: #fff;
+        }
+        input, select{
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        button{
+            background-color: dodgerblue;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;            
+        }
+        button:hover{
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form method="post" enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>">
+        <select>
+            <option> Selcione o Município...</option>
+            <option value="4333" id="1">São Bernardo do Campo</option>
+        </select>
+        <br><br>
+        <input type="text"  id="media_inso" name="media_inso" required="" placeholder="Município">
+        <br><br>
+        <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
+        <br><br>
+        <button>Calcular</button>
+        <br><br>
+        <?php
+            $media_inso = isset($_POST['media_inso']) ? $_POST['media_inso'] : false;
+            $media_kw = isset($_POST['media_kw']) ? $_POST['media_kw'] : false;
+            if (isset($media_inso) && $media_inso > 0 && isset($media_kw) && $media_kw > 0) {
+                
+                $conta = (($media_kw / 30 / $media_inso) / 0.8);
+                
+                $resultado = number_format($conta, 2, ".", ",");
 
-                <div class="linha" id="resultado">
-                    <?php
-                    if (isset ($_POST)) {
-                        $peso = isset($_POST['peso']) ? $_POST['peso'] : false;
-                        $altura = isset($_POST['altura']) ? $_POST['altura'] : false;
-                        if (isset($peso) && $peso > 0 && isset($altura) && $altura > 0) {
-                            $conta1 = $altura * $altura;
-                            $conta2 = $peso / $conta1;
-                            $resultado = number_format($conta2, 2, ".", ",");
-
-                            //var_dump($altura);
-                            //var_dump($peso);
-
-                            if (isset($resultado) && $resultado != '0') {
-                                ;
-                                echo '<h3>Seu IMC é: '. $resultado .'</h3>';
-                                //echo '<h4>' . $resultado . '</h4>';
-                            }else {
-                                echo '<h3>Por favor, utilize apenas numeros!</h3>';
-                            }
-                            if (isset($resultado) && $resultado < 17) {
-                                echo 'é menor que 17';
-                            } 
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
+                //var_dump($media_kw);
+                //var_dump($media_inso);
+                //var_dump($conta);
+                //var_dump($resultado);
+                echo '<h3>Sistema em kWp: '. $resultado .'</h3>';
+            }
+        ?>       
     </div>
-</main>
+</body>
+</html>
