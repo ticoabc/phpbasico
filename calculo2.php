@@ -44,14 +44,30 @@
 </head>
 <body>
     <div>
-        <h1>Turi Sistemas</h1>
-        <input type="text" placeholder="Município">
+    <form method="post" enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>">
+        <input type="text"  id="media_inso" name="media_inso" required="" placeholder="Município">
         <br><br>
-        <input type="text" placeholder="Consumo Médio em kW">
+        <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
         <br><br>
         <button>Calcular</button>
-        <br><br><br><br>
-        <input type="text" placeholder="Dim. do Sistema em kWp">
+        <br><br>
+        <?php
+            $media_inso = isset($_POST['media_inso']) ? $_POST['media_inso'] : false;
+            $media_kw = isset($_POST['media_kw']) ? $_POST['media_kw'] : false;
+            if (isset($media_inso) && $media_inso > 0 && isset($media_kw) && $media_kw > 0) {
+                
+                $conta = (($media_kw / 30 / $media_inso) / 0.8);
+                
+                $resultado = number_format($conta, 2, ".", ",");
+
+                //var_dump($media_kw);
+                //var_dump($media_inso);
+                //var_dump($conta);
+                //var_dump($resultado);
+                echo '<h3>Sistema em kWp: '. $resultado .'</h3>';
+            }
+        ?>
+        <!--<input type="text" placeholder="Sistema em kWp <?php echo $resultado ?>">-->
         
     </div>
 </body>
