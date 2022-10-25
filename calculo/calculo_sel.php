@@ -44,12 +44,12 @@
 <body>
     <div>
     <form method="post" enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>">
-        <select>
-            <option> Selcione o Município...</option>
-            <option value="4333" id="1">São Bernardo do Campo</option>
+        <select required="" placeholder="Selcione o Município...">
+            <option> 
+            <option value="4333" name="media_inso" id="media_inso" required="">São Bernardo do Campo</option>
         </select>
         <br><br>
-        <input type="text"  id="media_inso" name="media_inso" required="" placeholder="Município">
+        <!--<input type="text"  id="media_inso" name="media_inso" required="" placeholder="Município">-->
         <br><br>
         <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
         <br><br>
@@ -64,10 +64,10 @@
                 
                 $resultado = number_format($conta, 2, ".", ",");
 
-                //var_dump($media_kw);
-                //var_dump($media_inso);
-                //var_dump($conta);
-                //var_dump($resultado);
+                var_dump($media_kw);
+                var_dump($media_inso);
+                var_dump($conta);
+                var_dump($resultado);
                 echo '<h3>Sistema em kWp: '. $resultado .'</h3>';
             }
         ?>       
