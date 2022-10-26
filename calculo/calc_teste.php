@@ -45,11 +45,11 @@
     <div>
     <form method="POST" action="calc_teste_back.php">
         <select id="municipios" name="municipio" required="" placeholder="Selcione o Município...">
-            <option>Selcione o Município...</option>
-            <option value="4333" required="">Município 1</option>
-            <option value="5555" required="">Município 2</option>
-            <option value="3333" required="">Município 3</option>
-            <option value="2222" required="">Município 4</option>
+            <option>    Selcione o Município...</option>
+            <option value="4.333" required="">Município 1</option>
+            <option value="5.555" required="">Município 2</option>
+            <option value="3.333" required="">Município 3</option>
+            <option value="2.222" required="">Município 4</option>
         </select>
         <br><br>
         <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
