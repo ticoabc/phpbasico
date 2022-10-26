@@ -46,7 +46,7 @@
     <form method="POST" action="calc_teste_back.php">
         <select id="municipios" name="municipio" required="" placeholder="Selcione o Município...">
             <option>    Selcione o Município...</option>
-            <option value="4.333" required="">Município 1</option>
+            <option value="4.53" required="">Município 1</option>
             <option value="5.555" required="">Município 2</option>
             <option value="3.333" required="">Município 3</option>
             <option value="2.222" required="">Município 4</option>
@@ -56,6 +56,9 @@
         <br><br>
         <button>Calcular</button>
         <br><br>
+        <!--<?php
+            //include_once "calc_teste_back.php";
+        ?>-->
     </div>
 </body>
 </html>
