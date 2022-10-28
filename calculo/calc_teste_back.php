@@ -45,9 +45,10 @@
         <div>
             <?php
                 require "conexao.php";
-                $dbcoord = $_POST['dbcoord'];
+                $dbcoord = $_POST['nome'];                
                 $media_kw = $_POST['media_kw'];
                 echo '<br>';
+                echo '<h4>Município: '.$dbcoord.'</h4>';
                 echo '<h4>Média de Radiância do Município: '.$dbcoord.'</h4>';
                 echo '<h4>Consumo Médio em kW/h: '.$media_kw.'</h4>';
                 $conta = (($media_kw / 30 / $dbcoord) / 0.8);
@@ -55,12 +56,11 @@
                 echo '<h4>Sistema Estimado em kWp: '. $resultado .'</h4>';
                 echo '<a href="calc_teste.php">
                         <img border="0" alt="SpotUp" src="img\home.png" width="30" height="30"></a>';
-
-                //var_dump($media_kw);
-                //ar_dump($media_inso);
-                //var_dump($conta);
-                //var_dump($resultado);
                 /*
+                var_dump($media_kw);
+                var_dump($dbcoord);
+                var_dump($conta);
+                var_dump($resultado);
                 Hora de Sol Pleno ou Hora de Sol Pico (HSP) é a insolação diária 
                 (ou mensal, ou anual, dependendo da medida de tempo utilizada) que é 
                 recebida por uma determinada superfície, levando-se em consideração 
