@@ -43,36 +43,28 @@
 </head>
 <body>
     <div>
-    <form method="POST" action="calc_teste_back.php">
-        <select name="dbcoord" required="" placeholder="">
-            <option>Selcione o Município</option>
-            <?php  
-            require "conexao.php";
-                $result_dbcoord = "SELECT * FROM dbcoord ORDER BY NAME ASC";
-                $resultado_dbcoord = mysqli_query($conn, $result_dbcoord);
-                while($row_dbcoord = mysqli_fetch_assoc($resultado_dbcoord))
-                {?>
-                <option value="<?php echo $row_dbcoord['idcoord'];?>">
-                               <?php echo $row_dbcoord['NAME'];?>                               
-                </option><?php
-                }?>
-            <?php
-            ?>
-        </select><br><br>
-        <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
-        <br><br>
-        <button>Calcular</button>
-        <br><br>
-        <!--<?php
-            //include_once "calc_teste_back.php";
-        ?>-->
+        <img alt="SpotUp" src="img\Logo_INPE.png" width="80" height="80"><br><br>
+        <form method="POST" action="calc_teste_back.php">
+            <select name="dbcoord" required="" placeholder="">
+                <option>Selcione o Município</option>
+                <?php  
+                require "conexao.php";
+                    $result_dbcoord = "SELECT * FROM dbcoord ORDER BY NAME ASC";
+                    $resultado_dbcoord = mysqli_query($conn, $result_dbcoord);
+                    while($row_dbcoord = mysqli_fetch_assoc($resultado_dbcoord))
+                    {?>
+                    <option value="<?php echo $row_dbcoord['idcoord'];?>">
+                                   <?php echo $row_dbcoord['NAME'];?>
+                    </option><?php
+                    }?>
+                <?php
+                ?>
+            </select><br><br>
+            <input type="text" id="media_kw" name="media_kw" required="" placeholder="Consumo Médio em kW">
+            <br><br>
+            <button>Calcular</button>
+            <br><br>
+        </form>
     </div>
 </body>
 </html>
-<!-- <select id="municipios" name="municipio" required="" placeholder="Selcione o Município...">
-<option>Selcione o Município......</option>
-<option value="4.53" required="">Município 1</option>
-<option value="5.555" required="">Município 2</option>
-<option value="3.333" required="">Município 3</option>
-<option value="2.222" required="">Município 4</option>
-</select>-->
