@@ -44,16 +44,17 @@
     <body>
         <div>
             <?php
-                $municipios = $_POST['municipio'];
+                require "conexao.php";
+                $dbcoord = $_POST['dbcoord'];
                 $media_kw = $_POST['media_kw'];
                 echo '<br>';
-                echo '<h4>Média de Radiância do Município: '.$municipios.'</h4>';
+                echo '<h4>Média de Radiância do Município: '.$dbcoord.'</h4>';
                 echo '<h4>Consumo Médio em kW/h: '.$media_kw.'</h4>';
-                $conta = (($media_kw / 30 / $municipios) / 0.8);
-                $resultado = number_format($conta, 2, ".", ",");
+                $conta = (($media_kw / 30 / $dbcoord) / 0.8);
+                $resultado = number_format($conta, 9, ".", ",");
                 echo '<h4>Sistema Estimado em kWp: '. $resultado .'</h4>';
-                //echo '<a href="calc_teste.php">
-                        //<img border="0" alt="SpotUp" src="img\home.png" width="50" height="50"></a>';
+                echo '<a href="calc_teste.php">
+                        <img border="0" alt="SpotUp" src="img\home.png" width="30" height="30"></a>';
 
                 //var_dump($media_kw);
                 //ar_dump($media_inso);
