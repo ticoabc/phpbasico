@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WebApp2 - Analítico</title>
+        <title>WebApp2 - Analítico - P2</title>
         <style>
             body{
                 font-family: Arial, Helvetica, sans-serif;
@@ -92,13 +92,13 @@
                 $conta = ((($gasto / 30 / $idinsola) / 0.8)*1000);
                 $resultado2 = number_format($conta, 3, ".", ",");                
 
-                echo 'Projeto Energia Fotovoltaica';                
-                echo '<h5>Consumo Mensal Médio em R$: '.$resultado0.'</h5>';
-                echo '<h5>Consumo Médio Corrigido em R$: '.$resultado1.'</h5>';
-                echo '<h5>Potência Necessária: '.$resultado3.' kWp</h5>';
-                echo '<h5>Quantidade de Módulos: '.$resultado4.'</h5>';
-                echo '<h5>Potência Gerador: '.$resultado5.' kWp</h5>';
-                echo '<h5>Inversor Potência Mínima: '.$resultado6.' kW</h5>';
+                echo '<h4>Projeto Energia Fotovoltaica - P2</h4>';
+                //echo '<h5>Consumo Mensal Médio em R$: '.$resultado0.'</h5>';
+                //echo '<h5>Consumo Médio Corrigido em R$: '.$resultado1.'</h5>';
+                //echo '<h5>Potência Necessária: '.$resultado3.' kWp</h5>';
+                //echo '<h5>Quantidade de Módulos: '.$resultado4.'</h5>';
+                //echo '<h5>Potência Gerador: '.$resultado5.' kWp</h5>';
+                //echo '<h5>Inversor Potência Mínima: '.$resultado6.' kW</h5>';
                 echo '<h5>Geração Média Estimada kWh/mês: '.$resultado7.'</h5>';
                 //echo '<h5>Geração Média Estimada em kWp: '. $geracao .'</h5>';
                 
@@ -107,7 +107,6 @@
                 //var_dump($conta);
                 //var_dump($resultado);
             ?>
-            <a href="calc_teste_back3.php">Proxima Página</a>
             <center>
                 <img alt="" src="img\Logo_DIIAV.png" width="50" height="40">
                 <img alt="" src="img\Logo_LABREN.png" width="80" height="40">                

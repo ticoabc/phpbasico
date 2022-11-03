@@ -43,19 +43,18 @@
 </head>
 <body>
     <div>
-        <img alt="SpotUp" src="img\Logo_INPE.png" width="80" height="80"><br><br>
+        <img alt="" src="img\Logo_INPE.png" width="80" height="80"><br><br>
         <form method="POST" action="calc_teste_back.php">
-            <select name="dbcoord3" required="" placeholder="">
+            <select name="nm_municipio" required="" placeholder="">
                 <option>Selcione o Município</option>
                 <?php  
                 require "conexao.php";
-                    $result_dbcoord = "SELECT * FROM dbcoord3 ORDER BY nome ASC";
+                    $result_dbcoord = "SELECT * FROM tb_municipio ORDER BY nm_municipio ASC";
                     $resultado_dbcoord = mysqli_query($conn, $result_dbcoord);
                     while($row_dbcoord = mysqli_fetch_assoc($resultado_dbcoord))
                     {?>
-                    <option value="<?php echo $row_dbcoord['idcoord3'];?>">
-                                   <?php echo $row_dbcoord['nome'];?>
-                                   <?php      $row_dbcoord['media'];?>
+                    <option value="<?php echo $row_dbcoord['id_municipios '];?>">
+                                   <?php echo $row_dbcoord['nm_municipio'];?>                                   
                     </option><?php
                     }?>
                 <?php

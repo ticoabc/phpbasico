@@ -45,7 +45,7 @@
         <div>
             <?php
                 require "conexao.php";
-                $dbcoord = $_POST['nome'];                
+                $dbcoord = $_POST['nm_municipio'];                
                 $media_kw = $_POST['media_kw'];
                 echo '<br>';
                 echo '<h4>Município: '.$dbcoord.'</h4>';
