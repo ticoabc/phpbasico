@@ -46,7 +46,7 @@
             <img alt="" src="img\Logo_INPE.png" width="80" height="80"><br><br>
             <form method="POST" action="calc_teste_back2.php">
                 <select name="idinsola" required="" placeholder="">
-                    <option>Selcione o Município</option>
+                    <option value="">Selcione o Município</option>
                     <option value="4548" id="">São Bernardo do Campo</option>
                     <option value="5626">Santo André</option>
                     <option value="4641">São Caetano do Sul</option>
