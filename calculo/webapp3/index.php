@@ -30,13 +30,20 @@
                     }?>                    
             </select><br><br>
 
-            <!--<label>Escolha o Município</label>
-			<span class="carregando">Aguarde, carregando...</span>
-			<select name="idmunicipio" id="idmunicipio">
-				<option value="">Selecione...</option>
-			</select><br><br>
-			<input type="submit" value="Pesquisar">-->
-
+            <h3>Pesquisar Estados e Municípios</h3>
+		    <form method="POST" id="form-pesquisa" action="">
+                <label>Pesquisar Estado: </label>
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite o nome">
+                <label>Pesquisar Município: </label>
+                <input type="text" name="pesquisa_muni" id="pesquisa_muni" placeholder="Digite o nome">
+            </form>
         </form>
+        <ul class="resultado"></ul>
+        <ul class="resultado_muni"></ul><br>
+        
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/pesquisa.js"></script>
+        <script type="text/javascript" src="js/pesquisa_muni.js"></script>
+
     </body>
 </html>
