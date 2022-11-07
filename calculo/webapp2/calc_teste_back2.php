@@ -46,7 +46,7 @@
             }
         </style>
     </head>
-    <body class="center">        
+    <body class="center">
         <div>
             <a href="calc_teste2.php">
             <img alt="" src="img\home.png" width="60" height="50"></a><br><br>
