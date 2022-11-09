@@ -45,16 +45,16 @@
     <div>
         <img alt="" src="img\Logo_INPE.png" width="80" height="80"><br><br>
         <form method="POST" action="calc_teste_back.php">
-            <select name="nm_municipio" required="" placeholder="">
+            <select name="nome" id="nome"  required="" placeholder="">
                 <option>Selcione o Município</option>
                 <?php  
                 require "conexao.php";
-                    $result_dbcoord = "SELECT * FROM tb_municipio ORDER BY nm_municipio ASC";
+                    $result_dbcoord = "SELECT idmunicipio, nome FROM tbmunicipio ORDER BY nome ASC";
                     $resultado_dbcoord = mysqli_query($conn, $result_dbcoord);
                     while($row_dbcoord = mysqli_fetch_assoc($resultado_dbcoord))
                     {?>
-                    <option value="<?php echo $row_dbcoord['id_municipios '];?>">
-                                   <?php echo $row_dbcoord['nm_municipio'];?>                                   
+                    <option value="<?php echo $row_dbcoord['idmunicipio'];?>">
+                                   <?php echo $row_dbcoord['nome'];?>                                   
                     </option><?php
                     }?>
                 <?php
