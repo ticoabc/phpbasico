@@ -49,7 +49,7 @@
     <body class="center">
         <div>
             <a href="calc_teste2.php">
-            <img alt="" src="img\home.png" width="60" height="50"></a><br><br>
+            <img alt="" src="img\home.png" width="50" height="50"></a><br><br>
             <?php                
                 #########Constantes Provisórias##########
                 #      Padrão de Entrada = 2 Fases      #

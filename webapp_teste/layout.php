@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-        <link rel="stylesheet" href="css/style.css">
+        <!--<link rel="stylesheet" href="css/style.css">-->
         <title>DIV Lado a Lado</title>
     </head>
         <style>
@@ -15,7 +14,7 @@
             }
             
             div.container {
-                height: 100%;
+                height: 50%;
                 background: black;
             }
 
@@ -40,14 +39,14 @@
                 border-radius: 15px;
                 color: #fff;
             }
-            div.op2 {                
+            div.op2 {
                 background-color:#778899;
                 width: 50%;
+                padding: 5vw 0vw 5vw 0vw;
                 display: inline-block;
                 margin-right: 0vw;
                 font-size: 2vw;
-                text-align: center;
-                padding: 5vw 0vw 5vw 0vw;
+                text-align: center;                
                 min-width:40vw;
                 border-radius: 15px;
                 float: right;
@@ -99,23 +98,43 @@
     <body class="center">
         <form action="layout.php" method="POST">
             <div class="container">
-                <div class="col-md-12"></div>
-                <div class="titulo">O que você está procurando?</div>
+                <div class="col-md-10"></div>
+                <div class="titulo"></div>
                 <div class="op1">
-                    <select name="idinsola" required="" placeholder="">
-                        <option>Selcione o Município</option>
-                        <option value="4548" id="">São Bernardo do Campo</option>
-                        <option value="5626">Santo André</option>
-                        <option value="4641">São Caetano do Sul</option>
-                        <option value="4596">Diadema</option>
-                        <option value="4488">Mauá</option>                 
-                    </select><br><br>
+                <img alt="" src="img/placa_cel.png" width="50" height="50"><br>
+                    <?php
+                        echo '1 - Potência instalada';                       
+                    ?>
                 </div>                
                 <div class="op2">
+                <img alt="" src="img/1.painel.png" width="50" height="50"><br>
                     <?php
-                        echo 'Projeto Energia Fotovoltaica';                       
+                        echo '2 - Área mínima necessária';
+                    ?>                    
+                </div>
+                <div class="op1">
+                <img alt="" src="img/1.payback.png" width="50" height="50"><br>
+                    <?php
+                        echo '3 - Valor aproximado do sistema e instalação';                       
                     ?>
-                    <br><br>
+                </div>
+                <div class="op2">
+                <img alt="" src="img/1.painel_bat.png" width="50" height="50"><br>
+                    <?php
+                        echo '4 - Produção mensal';
+                    ?>
+                </div>
+                <div class="op1">
+                <img alt="" src="img/2.payback.png" width="50" height="50"><br>
+                    <?php
+                        echo '5 - Economia anual aproximada';
+                    ?>
+                </div>
+                <div class="op2">
+                <img alt="" src="img/0.payback.png" width="50" height="50"><br>
+                    <?php
+                        echo '6 - Tempo aproximado de retorno do investimento';
+                    ?>
                 </div>
                 <?php
                     #########Constantes Provisórias##########
