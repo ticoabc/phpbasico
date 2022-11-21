@@ -56,6 +56,10 @@
                 #      Custo Energia = 0,65649 Kw/h     #
                 #      Taxa de Desempenho = 0,72        #
                 #      Potência por Módulo = 275 Wp     #
+                #      Para Módulo de 270 Wp = 1.63 m2  #                
+                #      Para Módulo de 330 Wp = 1.95 m2  #
+                #      Módulo de 270 Wp = 11.1 kg/mod   #
+                #      Módulo de 330 Wp = 11.5 kg/mod   #
                 #########################################                
                 //require "conexao.php";
                 //$idinsola = $_POST['nome'];                
@@ -64,7 +68,7 @@
                 $faseentrada = 2;
                 $custoenergia = 0.65649;
                 $txdesempenho = 0.72;
-                $potmodulo = 275;
+                $potmodulo = 270;
 
                 #Consumo Mensal Médio
                 $consmensmedio = $gasto / $custoenergia;
@@ -78,7 +82,7 @@
 
                 #Potência Necessária
                 $potnecessaria = ($resultado1 / (30 * $idinsola * $txdesempenho))*1000;
-                $resultado3 = number_format($potnecessaria, 3, ".", ",");
+                $resultado3 = number_format($potnecessaria, 2, ".", ",");
 
                 #Quantidade de Módulos
                 $quantmod = (($resultado3 / ($potmodulo ))*1000);
@@ -86,11 +90,20 @@
 
                 #Potência Gerador
                 $potenciagera = (($potmodulo * ($resultado4 / 1000)));
-                $resultado5 = number_format($potenciagera, 3, ".", ",");
+                $resultado5 = number_format($potenciagera, 2, ".", ",");
 
                 #Inversor Potência Mínima
                 $inversor = $potenciagera / 1.05;
                 $resultado6 = number_format($inversor, 2, ".", ",");
+
+                #Área Coberta
+                if ($potmodulo <= 310) {
+                    $areac = ($quantmod * 1.63) * 1.1;
+                    $resultado10 = number_format($areac, 2, ".", ",");
+                }else {
+                    $areac = ($quantmod * 1.95) * 1.1;
+                    $resultado11 = number_format($areac, 2, ".", ",");
+                }
 
                 #Geração Média Estimada
                 $geracao = (($resultado5 * $idinsola * $txdesempenho * 30) / 1000);
@@ -110,6 +123,7 @@
                 echo '<h5>Quantidade de Módulos: '.$resultado4.'</h5>';
                 echo '<h5>Potência Gerador: '.$resultado5.' kWp</h5>';
                 echo '<h5>Inversor Potência Mínima: '.$resultado6.' kW</h5>';
+                echo '<h5>Área Coberta: '.$resultado10.' m2</h5>';
                 echo '<h5>Geração Média Estimada kWp/mês: '.$resultado7.'</h5>';
                 echo '<h5>Consumo Anual Médio em R$: '. $resultado2 .'</h5>';
                 echo '<h5>Geração Anual Média Estimada kW/h: '.$resultado8.'</h5>';
@@ -121,7 +135,7 @@
             ?>
             
             <center>
-                <img alt="" src="img\Logo_DIIAV.png" width="50" height="40">
+                <img alt="" src="img\Logo_DIIAV.png" width="55" height="40">
                 <img alt="" src="img\Logo_LABREN.png" width="80" height="40">                
             </center>
         </div>

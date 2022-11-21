@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="PT-br">
     <head>
         <meta charset="UTF-8">
@@ -16,7 +16,7 @@
                 box-sizing: inherit;
             }
 
-            .background {                
+            .background {
                 background-color: black;
                 padding: 0 25px 25px;
                 position: relative;
@@ -184,7 +184,7 @@
 
                     <div class="pricing-plan">
                     <img src="img/0.bat_sol.png" alt="" class="pricing-img" width="60" height="60">
-                        <h3 class="pricing-header">Small team</h3>
+                        <h4 class="pricing-header">Small team</h4>
                         <ul class="pricing-features">
                         <li class="pricing-features-item">Never sleeps</li>
                         <!--<li class="pricing-features-item">Multiple workers for more powerful apps</li>-->
@@ -202,19 +202,19 @@
                         </ul>
                         <!--<span class="pricing-price">$400</span>-->
                         <!--<a href="#/" class="pricing-button">Free trial</a>-->
-                    </div> 
-
-                    <div class="pricing-plan">
-                    <img src="img/1.painel_bat.png" alt="" class="pricing-img" width="60" height="60">
-                        <h3 class="pricing-header">Enterprise</h3>
-                        <ul class="pricing-features">
-                        <li class="pricing-features-item">Dedicated</li>
-                        <!--<li class="pricing-features-item">Simple horizontal scalability</li>-->
-                        </ul>
-                        <!--<span class="pricing-price">$400</span>-->
-                        <!--<a href="#/" class="pricing-button">Free trial</a>-->
-                    </div>
-
+                    </div><br>
+                    
+                        <div class="pricing-plan">
+                            <img src="img/1.painel_bat.png" alt="" class="pricing-img" width="60" height="60">
+                            <h3 class="pricing-header">Enterprise</h3>
+                            <ul class="pricing-features">
+                            <li class="pricing-features-item">Dedicated</li>
+                            <!--<li class="pricing-features-item">Simple horizontal scalability</li>-->
+                            </ul>
+                            <!--<span class="pricing-price">$400</span>-->
+                            <!--<a href="#/" class="pricing-button">Free trial</a>-->
+                        </div>                       
+                    
                 </div>
             </div>
         </div>
