@@ -49,18 +49,20 @@
     <body class="center">
         <div>
             <a href="calc_teste2.php">
-            <img alt="" src="img\home.png" width="50" height="50"></a><br><br>
+            <img alt="" src="img\home.png" width="50" height="50"></a>
+            <a href="calc_teste_back3.php">
+            <img alt="" src="img/2.payback.png" width="50" height="50"></a><br><br>
             <?php                
                 #########Constantes Provisórias##########
                 #      Padrão de Entrada = 2 Fases      #
                 #      Custo Energia = 0,65649 Kw/h     #
                 #      Taxa de Desempenho = 0,72        #
                 #      Potência por Módulo = 275 Wp     #
-                #      Para Módulo de 270 Wp = 1.63 m2  #                
+                #      Para Módulo de 270 Wp = 1.63 m2  #
                 #      Para Módulo de 330 Wp = 1.95 m2  #
                 #      Módulo de 270 Wp = 11.1 kg/mod   #
                 #      Módulo de 330 Wp = 11.5 kg/mod   #
-                #########################################                
+                #########################################
                 //require "conexao.php";
                 //$idinsola = $_POST['nome'];                
                 $idinsola = $_POST['idinsola'];
@@ -73,6 +75,7 @@
                 #Consumo Mensal Médio
                 $consmensmedio = $gasto / $custoenergia;
                 $resultado0 = number_format($consmensmedio, 2, ".", ",");
+                $_SESSION['$consmensmedio'] = '$resultado0';
                 
                 #Consumo Médio Corrigido
                 $resultado1 = $resultado0 - 50;
