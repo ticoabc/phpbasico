@@ -52,47 +52,59 @@ session_start();
     <body class="center">
         <div>
             <a href="calc_teste2.php">
-            <img alt="" src="img\home.png" width="50" height="50"></a>
-            <a href="calc_teste_back3.php">
-            <img alt="" src="img/2.payback.png" width="50" height="50"></a><br><br>
+            <img alt="" src="img\home.png" width="50" height="50"></a><br><br>
             <?php
                 #########Constantes Provisórias##########
-                #      Padrão de Entrada = 2 Fases      #
-                #      Taxa Mínima = 50                 #
-                #      Custo Energia = 0.65649 Kw/h     #
-                #      Taxa de Desempenho = 0.72        #
-                #      Potência por Módulo = 275 Wp     #
-                #      Para Módulo de 270 Wp = 1.63 m2  #
-                #      Para Módulo de 330 Wp = 1.95 m2  #
-                #      Módulo de 270 Wp = 11.1 kg/mod   #
-                #      Módulo de 330 Wp = 11.5 kg/mod   #
-                #      Queda Produção Anual = 0.08%     #
-                #      Inflação IPCA ano = 0.06%        #
+                #   Padrão de Entrada = 2 Fases         #
+                #   Taxa Mínima = 50                    #
+                #   Custo Energia = 0.65649 Kw/h        #
+                #   Taxa de Desempenho = 0.72           #
+                #   Potência por Módulo = 275 Wp        #
+                #   Para Módulo de 270 Wp = 1.63 m2     #
+                #   Para Módulo de 330 Wp = 1.95 m2     #
+                #   Módulo de 270 Wp = 11.1 kg/mod      #
+                #   Módulo de 330 Wp = 11.5 kg/mod      #
+                #   Queda Produção Anual = 0.08%        #
+                #   Custo Projeto = R$ 0,50             #
+                #   Custo Instalação = R$ 0,44          #
+                #   Custo Equipamentos = R$ 3,78        #
+                #   Tempo Projeto = 25 anos             #
+                #   Inflação IPCA ano = 6%              #
+                #   Rendimento Poupança Anual = 7%      #
                 #########################################
 
+                $gasto = 150;
+                $faseentrada = 2;
                 $custoenergia = 0.65649;
+                $txdesempenho = 0.72;
                 $taxamin = 50;
+                $custoprojeto = 0.50;
+                $custoinstalacao = 0.44;
+                $custoequipamento = 3.78;
 
                 #Valor Energia Novo (Custo Energia * Taxa Mínima)
                 $vlrenernovo = $custoenergia * $taxamin;
                 $resultado0 = number_format($vlrenernovo, 2, ".", ",");
 
-                #Valor Energia Conc.
-                #$vlrenerconc = $_SESSION['$resultado0'] * $custoenergia;
-                #$resultado1 = number_format($vlrenerconc, 2, ".", ",");
-                #$vlrenerconc = $custoenergia;
+                #Valor Energia Conc.                
+                $vlrenerconc = $gasto;
+                $resultado1 = number_format($vlrenerconc, 2, ".", ",");
+
+                #Retorno 1o ano
+                $retor1ano = ($resultado1 - $resultado0) * 12;
+                $resultado2 = number_format($retor1ano, 2, ",", ".");
+
+                #Custo Mínimo Projeto
+                $projcustomin = ($custoprojeto + $custoinstalacao + $custoequipamento);
 
                 echo '<h4>Dados Econômicos</h5>';
-                echo '<h5>Valor Energia Novo: '.$resultado0.'</h5><br>';
-                #echo '<h5>Valor Energia Novo: '.$resultado1.'</h5>';
-
+                echo '<h5>Valor Energia Novo: '.$resultado0.'</h5>';
+                echo '<h5>Valor Energia Novo: '.$resultado1.'</h5>';
+                echo '<h5>Valor Energia Novo: '.$resultado2.'</h5>';
 
 
             
             ?>
-        
-    
-        
             <center>
                 <img alt="" src="img\Logo_DIIAV.png" width="55" height="40">
                 <img alt="" src="img\Logo_LABREN.png" width="80" height="40">                

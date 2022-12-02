@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="PT-br">
     <head>
@@ -52,6 +55,7 @@
             <img alt="" src="img\home.png" width="50" height="50"></a>
             <a href="calc_teste_back3.php">
             <img alt="" src="img/2.payback.png" width="50" height="50"></a><br><br>
+            <form method="POST" action="calc_teste_back3.php">
             <?php                
                 #########Constantes Provisórias##########
                 #      Padrão de Entrada = 2 Fases      #
@@ -136,7 +140,7 @@
                 //var_dump($conta);
                 //var_dump($resultado);
             ?>
-            
+            </form>
             <center>
                 <img alt="" src="img\Logo_DIIAV.png" width="55" height="40">
                 <img alt="" src="img\Logo_LABREN.png" width="80" height="40">                
